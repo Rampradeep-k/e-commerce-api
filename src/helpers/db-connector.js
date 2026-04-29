@@ -21,7 +21,6 @@ try {
         },
     });
 
-    // console.log("Postgre Database Connected.");
 
     pool.on('connect', () => {
         console.log("Postgre Database Connected.");
