@@ -7,13 +7,13 @@ import loginService from '../services/login-service.js';
 
 async function loginUser(req, res) {
     try {
-        
+
         const result = await loginService.loginUser(req.body);
 
         res.setHeader('token', result.token);
         delete result.token
         console.log(result.user);
-        
+
         return successResponse(res, { data: result.user ? result.user : [] });
 
 

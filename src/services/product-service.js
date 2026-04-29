@@ -50,7 +50,6 @@ const getProducts = async (query = {}) => {
 
     values.push(offset);
     baseQuery += ` OFFSET $${values.length}`;
-console.log(conditions);
 
     const result = await executeQuery(baseQuery, values);
 

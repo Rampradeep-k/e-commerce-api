@@ -122,8 +122,10 @@ const router = express.Router();
  */
 import productRoutes from './product-route.js';
 import loginRoutes from './login-route.js';
+import reviewRoutes from './review-route.js';
 
 router.use( productRoutes);
 router.use( loginRoutes);
+router.use( reviewRoutes);
 
 export default router;
