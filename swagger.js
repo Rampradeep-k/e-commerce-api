@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3001',
+        url: 'https://e-commerce-api-qzm9.onrender.com/',
       },
     ],
     components: {
