@@ -17,7 +17,7 @@ try {
         connectionString: process.env.DATABASE_URL,
         ssl: {
             require: true,
-            rejectUnauthorized: false,  // ⭐ THIS FIXES IT
+            rejectUnauthorized: false, 
         },
     });
 
