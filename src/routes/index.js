@@ -92,6 +92,49 @@ const router = express.Router();
  *       201:
  *         description: Product deleted 
  * 
+ * /product-review:
+ *   get:
+ *     summary: Get product reviews
+ *     tags: [Product Reviews]
+ *     parameters:
+ *       - in: query
+ *         name: ProdcutId
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID of the product for which to get reviews
+ *     responses:
+ *       200:
+ *         description: List of product reviews
+ * 
+ *   post:
+ *     summary: Create product review
+ *     tags: [Product Reviews]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - productId
+ *               - rating
+ *             properties:
+ *               productId:
+ *                 type: number
+ *                 example: 1
+ *               rating:
+ *                 type: number
+ *                 example: 5
+ *               description:
+ *                 type: string
+ *                 example: Great product!
+ *               
+ *     responses:
+ *       201:
+ *         description: Product Review created
+ *      
+ * 
  * /api/auth/login:
  *   post:
  *     summary: Login user

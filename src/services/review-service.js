@@ -12,6 +12,10 @@ async function getProductReviews(reviewData) {
         values.push(reviewData.productId);
         conditions.push(`product_id  = $${values.length}`);
     }
+    if (reviewData.reviewsId) {
+        values.push(reviewData.reviewsId);
+        conditions.push(`reviews_id  = $${values.length}`);
+    }
     if (conditions.length) {
         baseQuery += ` WHERE ${conditions.join(" AND ")}`;
     }
@@ -49,8 +53,10 @@ const createProductReviews = async (data) => {
   `;
 
     const result = await executeQuery(query, values);
+    console.log(result);
+    
     if (result.length) {
-      return await getProductReviews({ "reviewId": result[0].review_id })
+      return await getProductReviews({ "reviewsId": result[0].reviews_id })
     }
   } catch (error) {
 
